@@ -26,7 +26,6 @@ export default function Home() {
         <div className="hidden md:flex space-x-8">
           <a href="#features" className="text-gray-700 hover:text-indigo-600 transition-colors">Features</a>
           <a href="#how-it-works" className="text-gray-700 hover:text-indigo-600 transition-colors">How It Works</a>
-          <a href="#testimonials" className="text-gray-700 hover:text-indigo-600 transition-colors">Testimonials</a>
           <a href="#partners" className="text-gray-700 hover:text-indigo-600 transition-colors">Partners</a>
         </div>
         
@@ -202,45 +201,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-16 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">What Our Users Say</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-indigo-600">S</span>
-                </div>
-                <div>
-                  <h4 className="font-bold">Somchai Jaidee</h4>
-                  <p className="text-gray-500">SKE Senior, Placed at TechCorp</p>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                "HireMeMaybe connected me with exactly the kind of software engineering role I was looking for. The platform understood my skills from the SKE program."
-              </p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-green-600">R</span>
-                </div>
-                <div>
-                  <h4 className="font-bold">Rajana Smith</h4>
-                  <p className="text-gray-500">HR Manager, Innovative Solutions Co.</p>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                "We've found our best interns through HireMeMaybe. The quality of Kasetsart SKE and CPE students is exceptional, and the platform makes recruitment efficient."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Partners */}
       <section id="partners" className="py-16 px-6 bg-indigo-50">
         <div className="max-w-6xl mx-auto">
@@ -329,9 +289,6 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="max-w-6xl mx-auto mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-          <p>© 2023 HireMeMaybe. All rights reserved.</p>
-        </div>
       </footer>
     </div>
   );

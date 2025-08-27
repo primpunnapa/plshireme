@@ -1,8 +1,38 @@
+"use client";
+
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
+  const { data: session, status } = useSession();
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+
+      {/* Simple auth bar */}
+      <header className="row-start-1 w-full flex justify-end gap-3">
+        {status === "loading" ? (
+          <span className="text-sm opacity-70">Checking session…</span>
+        ) : session ? (
+          <div className="flex items-center gap-3">
+            <span className="text-sm">Hi, {session.user?.name ?? "user"}</span>
+            <button
+              className="rounded px-3 py-1 border text-sm"
+              onClick={() => signOut()}
+            >
+              Sign out
+            </button>
+          </div>
+        ) : (
+          <button
+            className="rounded px-3 py-1 border text-sm"
+            onClick={() => signIn("github")}
+          >
+            Sign in with GitHub
+          </button>
+        )}
+      </header>
+
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -51,6 +81,7 @@ export default function Home() {
           </a>
         </div>
       </main>
+
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
